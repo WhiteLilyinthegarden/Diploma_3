@@ -1,4 +1,5 @@
 
+import client.RestClient;
 import client.UserRequest;
 import pageobject.RegisterPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -27,7 +28,7 @@ public class RegisterTests {
         userClient = new UserRequest();
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("https://stellarburgers.nomoreparties.site/");
+        driver.get(RestClient.BASE_URL);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         registerPage = new RegisterPage(driver);
     }

@@ -1,3 +1,4 @@
+import client.RestClient;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.junit4.DisplayName;
 import pageobject.HomePageBurger;
@@ -10,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 import static org.junit.Assert.assertEquals;
 
-public class HomePageTests {
+public class HomePageTests extends RestClient {
     private WebDriver driver;
     private HomePageBurger homePageBurger;
 
@@ -18,7 +19,7 @@ public class HomePageTests {
     public void testCreateOrder() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("https://stellarburgers.nomoreparties.site/");
+        driver.get(BASE_URL);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         homePageBurger = new HomePageBurger(driver);
     }

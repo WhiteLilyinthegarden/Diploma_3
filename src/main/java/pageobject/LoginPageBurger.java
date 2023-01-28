@@ -8,15 +8,15 @@ public class LoginPageBurger {
     public LoginPageBurger(WebDriver driver) {
         this.driver = driver;
     }
-    public By privateAreaLink = By.xpath(".//p[text()='Личный Кабинет']");
-    public By enterAccountButton = By.xpath(".//button[text()='Войти в аккаунт']");
-    public By enterButton = By.xpath(".//button[text()='Войти']");
-    public By emailField = By.xpath(".//fieldset[1]/div/div/input");
-    public By passwordField = By.xpath(".//fieldset[2]/div/div/input");
-    public By enterAuthButton = By.xpath(".//button[text()='Войти']");
-    public By orderSubmitButton = By.xpath(".//button[text()='Оформить заказ']");
-    public By forgotPassword = By.xpath(".//a[@href='/forgot-password']");
-    public By rememberPassword = By.xpath(".//a[@href='/login']");
+    private final By privateAreaLink = By.xpath(".//p[text()='Личный Кабинет']");
+    private final By enterAccountButton = By.xpath(".//button[text()='Войти в аккаунт']");
+    private final By enterButton = By.xpath(".//button[text()='Войти']");
+    private final By emailField = By.xpath(".//fieldset[1]/div/div/input");
+    private final By passwordField = By.xpath(".//fieldset[2]/div/div/input");
+    private final By enterAuthButton = By.xpath(".//button[text()='Войти']");
+    private final By orderSubmitButton = By.xpath(".//button[text()='Оформить заказ']");
+    private final By forgotPassword = By.xpath(".//a[@href='/forgot-password']");
+    private final By rememberPassword = By.xpath(".//a[@href='/login']");
 
     @Step("Клик по кнопке Личный Кабинет")
     public void clickPrivateAreaLink() {

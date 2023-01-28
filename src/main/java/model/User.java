@@ -1,7 +1,9 @@
 package model;
 
+import java.util.UUID;
+
 public class User {
-    private String email = "superherokin423@yandex.ru";
+    private String email;
     private String password = "P@ssw0rd_23";
     private String name = "Lily";
 
@@ -17,7 +19,7 @@ public class User {
     }
 
     public User() {
-
+        this.setEmail(UUID.randomUUID().toString()+ "@yandex.ru");
     }
 
     public String getEmail() {

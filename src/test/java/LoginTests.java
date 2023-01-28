@@ -1,3 +1,4 @@
+import client.RestClient;
 import client.UserRequest;
 import pageobject.LoginPageBurger;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -25,7 +26,7 @@ public class LoginTests {
         userRequest = new UserRequest();
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("https://stellarburgers.nomoreparties.site/");
+        driver.get(RestClient.BASE_URL);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         loginPageBurger = new LoginPageBurger(driver);
         userRequest.create(user);
