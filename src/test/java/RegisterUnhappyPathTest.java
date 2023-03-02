@@ -21,8 +21,8 @@ public class RegisterUnhappyPathTest {
 
     User user = new User();
 
-    @Before
-    public void testCreateOrder() {
+   @Before
+  public void testCreateOrder() {
         userRequest = new UserRequest();
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -30,7 +30,7 @@ public class RegisterUnhappyPathTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         registerPage = new RegisterPage(driver);
         userRequest.create(user);
-    }
+        }
     @Test
     @DisplayName("Неккоректный пароль при Регистрации меннее 6 символов")
     public void registrationFail() {
@@ -42,9 +42,6 @@ public class RegisterUnhappyPathTest {
     }
     @After
     public void tearDown() {
-        ValidatableResponse response = userRequest.login(user);
-        String accessToken = response.extract().path("accessToken");
-        userRequest.delete(accessToken);
         driver.quit();
     }
 }
